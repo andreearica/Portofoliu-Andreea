@@ -20,7 +20,7 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       margin-bottom: 10px;
     }
 
@@ -29,6 +29,7 @@
       margin: 0 auto 15px;
       font-size: 1.05rem;
       color: #444;
+      line-height: 1.7;
     }
 
     .contact {
@@ -47,10 +48,14 @@
       text-decoration: underline;
     }
 
+    /* ✅ Responsive video grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
 
     .card {
@@ -58,13 +63,31 @@
       padding: 15px;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    iframe {
-      border-radius: 10px;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ✅ TikTok embed responsive behavior */
+    .tiktok-embed {
       width: 100%;
-      height: 600px;
-      border: none;
+      max-width: 400px;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
@@ -84,25 +107,58 @@
   </div>
 
   <div class="grid">
+    <!-- Video 1 -->
     <div class="card">
-      <iframe src="https://www.tiktok.com/embed/7561885107541198358" width="325" height"575" frameborder="0" allowfullscreen></iframe>
+      <blockquote class="tiktok-embed"
+        cite="https://www.tiktok.com/@afaartdesign/video/7493183835119619350"
+        data-video-id="7493183835119619350">
+        <section></section>
+      </blockquote>
     </div>
+
+    <!-- Video 2 -->
     <div class="card">
-      <iframe src="https://www.tiktok.com/oembed?url=https://www.tiktok.com/embed/vm.ZNd7ACjcS" allowfullscreen></iframe>
+      <blockquote class="tiktok-embed"
+        cite="https://www.tiktok.com/@afaartdesign/video/7489533792789597462"
+        data-video-id="7489533792789597462">
+        <section></section>
+      </blockquote>
     </div>
+
+    <!-- Video 3 -->
     <div class="card">
-      <iframe src="https://www.tiktok.com/oembed?url=https://www.tiktok.com/embed/vm.ZNd7ApQdN" allowfullscreen></iframe>
+      <blockquote class="tiktok-embed"
+        cite="https://www.tiktok.com/@afaartdesign/video/7487587807909743895"
+        data-video-id="7487587807909743895">
+        <section></section>
+      </blockquote>
     </div>
+
+    <!-- Video 4 -->
     <div class="card">
-      <iframe src="https://www.tiktok.com/oembed?url=https://www.tiktok.com/embed/vm.ZNd7Ab3YG" allowfullscreen></iframe>
+      <blockquote class="tiktok-embed"
+        cite="https://www.tiktok.com/@afaartdesign/video/7486908506671467798"
+        data-video-id="7486908506671467798">
+        <section></section>
+      </blockquote>
     </div>
+
+    <!-- Video 5 -->
     <div class="card">
-      <iframe src="https://www.tiktok.com/oembed?url=https://www.tiktok.com/embed/vm.ZNd7AVooP" allowfullscreen></iframe>
-    </div>
-    <div class="card">
-      <iframe src="https://www.tiktok.com/oembed?url=https://www.tiktok.com/embed/vm.ZNd7AQgDB" allowfullscreen></iframe>
+      <blockquote class="tiktok-embed"
+        cite="https://www.tiktok.com/@afaartdesign/video/7486147799478766870"
+        data-video-id="7486147799478766870">
+        <section></section>
+      </blockquote>
     </div>
   </div>
+
+  <!-- TikTok embed script: required ONCE -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Andreea Rica · Toate drepturile rezervate
+  </footer>
 
 </body>
 </html>

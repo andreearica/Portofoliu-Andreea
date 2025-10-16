@@ -7,9 +7,9 @@
 
   <style>
     :root{
-      /* Use ONE of these (A = project path, B = raw URL). A is recommended. */
+      /* ✅ background image — use your local path or raw GitHub URL */
       --bg-image: url('/Portofoliu-Andreea/leaf.jpg');
-      /* or: --bg-image: url('https://raw.githubusercontent.com/andreearica/Portofoliu-Andreea/main/leaf.jpg'); */
+      /* or fallback: --bg-image: url('https://raw.githubusercontent.com/andreearica/Portofoliu-Andreea/main/leaf.jpg'); */
 
       --overlay: rgba(255,255,255,.82);
       --card:#fff; --ink:#0f172a; --muted:#5b667a; --accent:#2563eb;
@@ -24,7 +24,7 @@
       color:var(--ink); min-height:100vh; position:relative; overflow-x:hidden;
     }
 
-    /* Blurred background */
+    /* blurred background */
     body::before{
       content:""; position:fixed; inset:0;
       background: var(--bg-image) center/cover no-repeat;
@@ -32,12 +32,14 @@
       transform: scale(1.05);
       z-index:-2;
     }
-    /* Soft overlay */
+
+    /* soft white overlay */
     body::after{
       content:""; position:fixed; inset:0; background: var(--overlay); z-index:-1;
     }
 
     .wrap{ max-width:var(--maxw); margin:0 auto; padding:28px 18px 56px; position:relative; z-index:1; }
+
     header{ text-align:center; margin-bottom:30px; }
     h1{ font-size:clamp(28px,3.8vw,40px); line-height:1.2; margin:0 0 10px; }
     .intro{ max-width:760px; margin:0 auto; color:var(--muted); font-size:1.05rem; line-height:1.7; }
@@ -45,22 +47,22 @@
     .contacts a{ color:var(--accent); text-decoration:none; }
     .contacts a:hover{ text-decoration:underline; }
 
-    /* Responsive, equal cards */
     .grid{
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap:26px;
       margin-top:18px;
     }
+
     .card{
-      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:14px;
-      transition: transform .18s ease, box-shadow .18s ease;
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:14px; transition: transform .18s ease, box-shadow .18s ease;
       display:flex; flex-direction:column; align-items:center;
     }
     .card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-hover); }
+
     .frame{ border-radius:12px; overflow:hidden; outline:1px solid #e9edf6; width:100%; display:flex; justify-content:center; }
 
-    /* Ensures equal visual size for all embeds */
     .tiktok-embed{ width:100%; max-width:420px; aspect-ratio: 9 / 16; margin:0 auto; }
 
     .meta{ display:flex; justify-content:center; gap:10px; margin-top:10px; }
@@ -143,14 +145,14 @@
         <div class="meta"><a class="btn" href="https://www.tiktok.com/@andreea_a.r/video/7486147799478766870" target="_blank" rel="noopener">Deschide pe TikTok</a></div>
       </article>
 
-      <!-- 6 (new video under afaartdesign) -->
+      <!-- 6 -->
       <article class="card">
         <div class="frame">
           <blockquote class="tiktok-embed"
-            cite="https://www.tiktok.com/@afaartdesign/video/7498598745479662870"
+            cite="https://www.tiktok.com/@andreea_a.r/video/7498598745479662870"
             data-video-id="7498598745479662870"><section></section></blockquote>
         </div>
-        <div class="meta"><a class="btn" href="https://www.tiktok.com/@afaartdesign/video/7498598745479662870" target="_blank" rel="noopener">Deschide pe TikTok</a></div>
+        <div class="meta"><a class="btn" href="https://www.tiktok.com/@andreea_a.r/video/7498598745479662870" target="_blank" rel="noopener">Deschide pe TikTok</a></div>
       </article>
     </main>
 
